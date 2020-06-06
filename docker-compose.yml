@@ -4,3 +4,7 @@ services:
     build: .
     image: yukin01/atcoder:0.0.1
     container_name: atcoder
+    tty: true
+    volumes:
+      - ./:/atcoder:cached
+    working_dir: /atcoder
