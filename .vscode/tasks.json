@@ -3,13 +3,11 @@
   "tasks": [
     {
       "type": "shell",
-      "label": "C/C++: g++ build active file",
-      "command": "/usr/local/bin/g++",
+      "label": "make",
+      "command": "make",
       "args": [
-        "-g",
-        "${file}",
-        "-o",
-        "${fileDirname}/a.out"
+        "DIR=${fileDirname}",
+        "CXXFLAGS=-g -std=gnu++17 -O0"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
