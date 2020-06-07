@@ -1,10 +1,5 @@
-FROM ubuntu:focal
+FROM gcc:9.2.0
 
-# for tzdata
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt update && apt -y install \
-  git \
-  build-essential \
-  gdb \
-  libboost-dev
+RUN apt-get update && apt-get -y install \
+  libboost-dev \
+  gdb
