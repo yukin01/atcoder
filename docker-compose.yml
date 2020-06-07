@@ -3,9 +3,22 @@ services:
   atcoder:
     build:
       context: ./
-      dockerfile: Dockerfile.ubuntu
-    image: yukin01/atcoder:0.0.1
+      dockerfile: Dockerfile
+    image: yukin01/atcoder:ubuntu
     container_name: atcoder
+    tty: true
+    volumes:
+      - ./:/atcoder:cached
+    working_dir: /atcoder
+
+  # official gcc image
+  # ! C/C++ intellisense is not working and too slow
+  atcoder-gcc:
+    build:
+      context: ./
+      dockerfile: Dockerfile.gcc
+    image: yukin01/atcoder:gcc
+    container_name: atcoder-gcc
     tty: true
     volumes:
       - ./:/atcoder:cached

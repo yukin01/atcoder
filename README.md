@@ -9,6 +9,6 @@ Run the `Remote-Containers: Reopen in Container` command from the Command Palett
 ### Using Docker Compose
 
 ```bash
-$ docker-compose up -d
+$ docker-compose up -d atcoder
 $ docker-compose exec atcoder /bin/bash
 ```
