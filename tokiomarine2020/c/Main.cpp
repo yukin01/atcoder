@@ -9,18 +9,6 @@ int main() {
     cin >> A.at(i);
   }
 
-  if (N <= K) {
-    for (int i = 0; i < N; i++) {
-      cout << N;
-      if (i == N - 1) {
-        cout << endl;
-      } else {
-        cout << ' ';
-      }
-    }
-    return 0;
-  }
-
   vector<int> B;
   for (int i = 0; i < K; i++) {
     B = vector<int>(N, 0);
@@ -29,20 +17,18 @@ int main() {
       int a = A.at(j); // A_j
       int left = max(j - a, 0);
       int right = min(j + a, N - 1);
-      // for (int k = left; k < right + 1; k++) {
-      //   B.at(k)++;
-      // }
       B.at(left)++;
       if (right != N - 1) {
         B.at(right + 1)--;
       }
     }
-    // A = B;
-    int a = 0;
-    for (int j = 0; j < N; j++) {
-      a += B.at(j);
-      A.at(j) = a;
+
+    for (int j = 1; j < N; j++) {
+      B.at(j) += B.at(j - 1);
     }
+
+    if (A == B) break;
+    swap(A, B);
   }
 
   for (int i = 0; i < N; i++) {
