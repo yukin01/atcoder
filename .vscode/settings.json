@@ -1,5 +1,8 @@
 {
   "remote.containers.dotfiles.repository": "https://github.com/yukin01/dotfiles",
   "remote.containers.dotfiles.targetPath": "~/dotfiles",
-  "remote.containers.dotfiles.installCommand": "~/dotfiles/install-in-remote-containers.sh"
+  "remote.containers.dotfiles.installCommand": "~/dotfiles/install-in-remote-containers.sh",
+  "files.associations": {
+    "iostream": "cpp"
+  }
 }
