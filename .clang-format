@@ -1,0 +1,4 @@
+BasedOnStyle: Google
+
+# For rep macro https://teratail.com/questions/208456
+AllowShortFunctionsOnASingleLine: Empty

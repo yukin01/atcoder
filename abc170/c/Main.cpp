@@ -19,10 +19,8 @@ int main() {
   }
   set<int> PS(P.begin(), P.end());
 
-
   int x = -1;
   rep(i, 100) {
-
     if (!PS.count(X - i)) {
       x = X - i;
       break;

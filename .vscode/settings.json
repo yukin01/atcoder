@@ -4,5 +4,9 @@
   "remote.containers.dotfiles.installCommand": "~/dotfiles/install-in-remote-containers.sh",
   "files.associations": {
     "iostream": "cpp"
-  }
+  },
+  // "[cpp]": {
+  //   "editor.formatOnSave": true
+  // }
+  "editor.formatOnSave": true
 }
