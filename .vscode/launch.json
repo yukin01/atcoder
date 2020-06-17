@@ -11,7 +11,7 @@
       "program": "${fileDirname}/a.out",
       "args": [
         "<",
-        "${fileDirname}/sample1.txt"
+        "${fileDirname}/1.txt"
       ],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
