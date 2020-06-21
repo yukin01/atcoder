@@ -3,7 +3,8 @@
   "remote.containers.dotfiles.targetPath": "~/dotfiles",
   "remote.containers.dotfiles.installCommand": "~/dotfiles/install-in-remote-containers.sh",
   "files.associations": {
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "ostream": "cpp"
   },
   // "[cpp]": {
   //   "editor.formatOnSave": true
