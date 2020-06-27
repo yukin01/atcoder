@@ -5,6 +5,7 @@ using ll = long long;
 using P = pair<int, int>;
 using Graph = vector<vector<int>>;
 
+// 組み合わせ
 void combination(Graph& graph, vector<int> selected, vector<int> rest, int r) {
   if (selected.size() == r) {
     graph.push_back(selected);
