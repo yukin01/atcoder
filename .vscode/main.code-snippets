@@ -72,6 +72,11 @@
       "  }",
       "}",
       ""
-    ]
+    ],
+  },
+  "graph": {
+    "scope": "cpp",
+    "prefix": "graph",
+    "body": "using Graph = vector<vector<${0:int}>>;"
   }
 }

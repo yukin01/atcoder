@@ -8,10 +8,10 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/a.out",
+      "program": "${fileDirname}/${fileBasenameNoExtension}.out",
       "args": [
         "<",
-        "${fileDirname}/1.txt"
+        "${fileDirname}/${fileBasenameNoExtension}1"
       ],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
