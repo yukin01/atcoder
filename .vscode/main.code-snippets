@@ -53,7 +53,25 @@
       "int ctoi(const char c) {",
       "  if ('0' <= c && c <= '9') return (c - '0');",
       "  return -1;",
+      "}"
+    ]
+  },
+  "print_vec": {
+    "scope": "cpp",
+    "prefix": "print_vec",
+    "body": [
+      "",
+      "void print_vec(vector<${0:int}> vec) {",
+      "  rep(i, vec.size()) {",
+      "    cout << vec.at(i);",
+      "    if (i == vec.size() - 1) {",
+      "      cout << endl;",
+      "    } else {",
+      "      cout << ' ';",
+      "    }",
+      "  }",
       "}",
+      ""
     ]
   }
 }
