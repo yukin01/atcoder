@@ -20,19 +20,19 @@ int main() {
     }
   }
 
-  vector<int> T(D);       // 0 to 364
-  vector<int> L(26, -1);  // 0 to 25
+  vector<int> T(D);                               // 0 to 364
+  vector<vector<int>> L(26, vector<int>(1, -1));  // 0 to 25
   rep(i, D) {
     int maxplus = -1;
     int t = -1;
     rep(j, 26) {
-      int plus = C.at(j) * (i - L.at(j)) + S.at(i).at(j);
+      int plus = C.at(j) * (i - L.at(j).back()) + S.at(i).at(j);
       if (plus > maxplus) {
         t = j;
         maxplus = plus;
       }
     }
-    L.at(t) = i;
+    L.at(t).push_back(i);
     T.at(i) = t;
     // todo
   }

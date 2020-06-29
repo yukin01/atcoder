@@ -4,7 +4,23 @@
   "remote.containers.dotfiles.installCommand": "~/dotfiles/install-in-remote-containers.sh",
   "files.associations": {
     "iostream": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "array": "cpp",
+    "atomic": "cpp",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "vector": "cpp",
+    "algorithm": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp",
+    "string_view": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "scoped_allocator": "cpp",
+    "regex": "cpp"
   },
   // "[cpp]": {
   //   "editor.formatOnSave": true
