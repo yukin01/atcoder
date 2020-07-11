@@ -25,5 +25,6 @@
   // "[cpp]": {
   //   "editor.formatOnSave": true
   // }
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "C_Cpp.default.cppStandard": "c++17"
 }
