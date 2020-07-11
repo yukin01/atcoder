@@ -8,20 +8,19 @@ int main() {
   int N;
   string S;
   cin >> N >> S;
-  vector<int> R, G, B;
+  ll r, g, b;
+  r = g = b = 0;
   rep(i, N) {
-    if (S.at(i) == 'R') R.push_back(i);
-    if (S.at(i) == 'G') G.push_back(i);
-    if (S.at(i) == 'B') B.push_back(i);
+    if (S.at(i) == 'R') r++;
+    if (S.at(i) == 'G') g++;
+    if (S.at(i) == 'B') b++;
   }
-  int cnt = 0;
-  for (auto r : R) {
-    for (auto g : G) {
-      for (auto b : B) {
-        int sum = r + g + b;
-        if (sum == 3 * r || sum == 3 * g || sum == 3 * b) continue;
-        cnt++;
-      }
+  ll cnt = r * g * b;
+  for (int i = 0; i < N; i++) {
+    for (int j = i + 1; j < N; j++) {
+      int k = 2 * j - i;
+      if (k >= N) continue;
+      if (S.at(i) != S.at(j) && S.at(j) != S.at(k) && S.at(k) != S.at(i)) cnt--;
     }
   }
   cout << cnt << endl;
