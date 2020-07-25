@@ -1,16 +1,8 @@
 #!/usr/bin/env node
 
 const raw = `
-void print_vec(vector<T> vec) {
-  rep(i, vec.size()) {
-    cout << vec.at(i);
-    if (i == vec.size() - 1) {
-      cout << endl;
-    } else {
-      cout << ' ';
-    }
-  }
-}
+#include <boost/multiprecision/cpp_int.hpp>
+namespace mp = boost::multiprecision;
 `;
 
 const lines = raw.split("\n");
