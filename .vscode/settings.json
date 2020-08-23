@@ -20,7 +20,8 @@
     "unordered_map": "cpp",
     "unordered_set": "cpp",
     "scoped_allocator": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "tuple": "cpp"
   },
   // "[cpp]": {
   //   "editor.formatOnSave": true
