@@ -7,45 +7,34 @@ using P = pair<int, int>;
 int main() {
   int N, M;
   cin >> N >> M;
-  vector<int> G(N + 1, 0);
-  vector<set<int>> H(N + 1);
-  int idx = 1;
-  int ans = 1;
 
+  vector<set<int>> G(N + 1);
   int a, b;
   rep(i, M) {
     cin >> a >> b;
-    if (G.at(a) == 0 && G.at(b) == 0) {
-      G.at(a) = idx;
-      G.at(b) = idx;
-      H.at(idx).insert(a);
-      H.at(idx).insert(b);
-      ans = max(ans, 2);
-      idx++;
-      continue;
-    }
+    G.at(a).insert(b);
+    G.at(b).insert(a);
+  }
+  vector<int> H(N + 1, 0);
+  int ans = 1;
 
-    if (G.at(a) == 0 && G.at(b) != 0) {
-      G.at(a) = G.at(b);
-      H.at(G.at(b)).insert(a);
-      ans = max(ans, (int)H.at(G.at(b)).size());
-      continue;
-    }
+  rep(i, N + 1) {
+    if (i == 0 || H.at(i) != 0) continue;
+    queue<int> que;
+    que.push(i);
 
-    if (G.at(a) != 0 && G.at(b) == 0) {
-      G.at(b) = G.at(a);
-      H.at(G.at(a)).insert(b);
-      ans = max(ans, (int)H.at(G.at(a)).size());
-      continue;
+    int cnt = 0;
+    while (!que.empty()) {
+      auto q = que.front();
+      que.pop();
+      if (H.at(q) != 0) continue;
+      H.at(q) = 1;
+      cnt++;
+      for (auto g : G.at(q)) {
+        if (H.at(g) == 0) que.push(g);
+      }
     }
-
-    // a 側に揃える
-    if (G.at(a) == G.at(b)) continue;
-    for (auto tmp : H.at(G.at(b))) {
-      G.at(tmp) = G.at(a);
-    }
-    H.at(G.at(a)).merge(H.at(G.at(b)));
-    ans = max(ans, (int)H.at(G.at(a)).size());
+    ans = max(ans, cnt);
   }
 
   cout << ans << endl;
