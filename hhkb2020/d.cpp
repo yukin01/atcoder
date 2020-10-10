@@ -20,8 +20,13 @@ int main() {
     r = (N - b + 1) * (N - b + 1) % mod;
     ans = l * r % mod;
 
-    l = (a + b - 1) * (N - a + 1) % mod;
-    r = b * (b - 1) % mod;  // TODO
+    l = (N - b + 1) * (N - a + 1) % mod;
+    ll x = N - a - b;
+    if (x >= 0) {
+      r = (x + 1) * (x + 2) % mod;
+    } else {
+      r = 0;
+    }
     ans -= (l - r) * (l - r) % mod;
     ans %= mod;
     if (ans < 0) ans += mod;
