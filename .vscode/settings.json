@@ -21,7 +21,8 @@
     "unordered_set": "cpp",
     "scoped_allocator": "cpp",
     "regex": "cpp",
-    "tuple": "cpp"
+    "tuple": "cpp",
+    "bitset": "cpp"
   },
   // "[cpp]": {
   //   "editor.formatOnSave": true
