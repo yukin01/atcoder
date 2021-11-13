@@ -8,14 +8,11 @@ int main() {
   ll N;
   cin >> N;
   ll ans = 0;
-  ll s2 = sqrt(N);
-  ll s3 = pow(N, 1.0 / 3.0);
 
-  for (ll i = 1; i <= s3; i++) {
-    for (ll j = i; j <= s2; j++) {
-      ll k = N / (i * j);
-      if (k < j) break;
-      ans += k - j + 1;
+  for (ll a = 1; a * a * a <= N; a++) {
+    for (ll b = a; a * b * b <= N; b++) {
+      ll c = N / (a * b);
+      ans += c - b + 1;
     }
   }
 

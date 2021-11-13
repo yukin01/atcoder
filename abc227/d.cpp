@@ -5,22 +5,27 @@ using ll = long long;
 using P = pair<int, int>;
 
 int main() {
-  int N, K;
+  ll N, K;
   cin >> N >> K;
   vector<ll> A(N);
   rep(i, N) cin >> A.at(i);
-  sort(A.begin(), A.end(), greater<int>());
+  ll ok = -1;
+  // (全社員の最大値) = 2e5 * 1e12
+  // (プロジェクトの最大値) = (全社員の最大値) / (プロジェクトあたりの人数)
+  // ng > 2e17 / K
+  ll ng = 1e18 / K;
 
-  int ans = 0;
-  while (true) {
-    rep(i, K) {
-      if (A.at(i) == 0) {
-        cout << ans << endl;
-        return 0;
-      }
-      A.at(i)--;
+  while (ok + 1 < ng) {
+    ll md = (ok + ng) / 2;
+    ll sum = 0;
+    rep(i, N) {
+      sum += min(md, A.at(i));
     }
-    ans++;
-    sort(A.begin(), A.end(), greater<int>());
+    if (K * md > sum) {
+      ng = md;
+    } else {
+      ok = md;
+    }
   }
+  cout << ok << endl;
 }
