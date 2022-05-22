@@ -1,7 +1,4 @@
-FROM ubuntu:focal
-
-# for tzdata
-ENV DEBIAN_FRONTEND=noninteractive
+FROM ubuntu:jammy
 
 RUN apt update && apt -y install \
   git \

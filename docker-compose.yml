@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9"
 services:
   atcoder:
     build:
@@ -23,3 +23,5 @@ services:
     volumes:
       - ./:/atcoder:cached
     working_dir: /atcoder
+    profiles:
+      - experimental
